@@ -33,7 +33,7 @@ def sequence_calculator(n):
     return curr
 
 intervals=[]
-for i in tqdm(range(0, 100000, 1)):
+for i in tqdm(range(0, 100000+1)):
     start=time.time()
     sequence_calculator(i)
     end=time.time()
