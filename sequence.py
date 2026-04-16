@@ -33,7 +33,8 @@ def sequence_calculator(n):
     return curr
 
 intervals=[]
-for i in tqdm(range(0, 100000+1)):
+n_values = np.unique(np.logspace(0, 5, 200, dtype=int))
+for i in tqdm(n_values):
     start=time.time()
     sequence_calculator(i)
     end=time.time()
@@ -41,5 +42,10 @@ for i in tqdm(range(0, 100000+1)):
 
 np.save("timings.npy", np.array(intervals))
 
-plt.plot(intervals)
+coeffs = np.polyfit(n_values, intervals, 2)
+fit = np.polyval(coeffs, n_values)
+
+plt.scatter(n_values, intervals, label="measured")
+plt.plot(n_values, fit, label="quadratic fit")
+plt.legend()
 plt.show()
