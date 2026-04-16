@@ -35,6 +35,7 @@
 
 import math
 import matplotlib.pyplot as plt
+import os
 
 class CarSimulator():
     def __init__(self, wheelbase, v0, theta0):
@@ -95,6 +96,8 @@ def main():
          a_lat.append(simulator.v**2/100) # centripetal acceleration
          times.append(t)
 
+     if not os.path.exists("car_simulator"):
+         os.makedirs("car_simulator")
      plt.figure()
      plt.plot(pos_x,pos_y)
      plt.xlabel("x (m)")
@@ -102,7 +105,7 @@ def main():
      plt.title("Vehicle Trajectory")
      plt.axis("equal")
      plt.grid(True)
-     plt.savefig("trajectory.png")
+     plt.savefig("car_simulator/trajectory.png")
 
      plt.figure()
      plt.plot(times,a_long,label="Longitudinal")
@@ -112,7 +115,7 @@ def main():
      plt.title("Accelerations over Time")
      plt.legend()
      plt.grid(True)
-     plt.savefig("accelerations.png")
+     plt.savefig("car_simulator/accelerations.png")
 
      plt.show()
 

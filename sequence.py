@@ -23,6 +23,7 @@ import time
 import matplotlib.pyplot as plt
 from tqdm import tqdm
 import numpy as np
+import os
 
 def sequence_calculator(n):
     if n==0 or n==1:
@@ -47,5 +48,8 @@ fit = np.polyval(coeffs, n_values)
 
 plt.scatter(n_values, intervals, label="measured")
 plt.plot(n_values, fit, label="quadratic fit")
+if not os.path.exists("sequences"):
+    os.makedirs("sequences")
+plt.savefig("sequences/time_complexity.png")
 plt.legend()
 plt.show()
