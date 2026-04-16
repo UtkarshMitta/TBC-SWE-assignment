@@ -102,6 +102,7 @@ def main():
      plt.title("Vehicle Trajectory")
      plt.axis("equal")
      plt.grid(True)
+     plt.savefig("trajectory.png")
 
      plt.figure()
      plt.plot(times,a_long,label="Longitudinal")
@@ -111,6 +112,7 @@ def main():
      plt.title("Accelerations over Time")
      plt.legend()
      plt.grid(True)
+     plt.savefig("accelerations.png")
 
      plt.show()
 
