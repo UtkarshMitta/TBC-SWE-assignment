@@ -2,4 +2,4 @@
 - Because of factor of $3$, $S_n$ scales exponentially. Hence, number of digits scale by $log$ of exponent, i.e. linearly
 - Multiplication by 3 and subsequent subtraction takes $\mathcal{O}(d)$ time where $d$ is the number of digits. As ve derived from the previous bullet point, this is $\mathcal{O}(n)$
 - Single arithmetic step in each forward pass takes $\mathcal{O}(n)$ time. And we have $n$ iterations
-- Overall computation takes $\mathcal{O}(n^2) time
+- Overall computation takes $\mathcal{O}(n^2)$ time
